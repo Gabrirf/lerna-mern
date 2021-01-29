@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 
 async function getFromBackend() {
-  const response = await fetch(`http://127.0.0.1:3001/api/v1/users/${Math.floor(Math.random()*100)}`);
+  const port = window.location.port ? `:${parseInt(window.location.port)+1}` : '';
+  const url = `${window.location.protocol}//${window.location.hostname}${port}/api/v1/users/${Math.floor(Math.random()*100)}`;
+  const options = {
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
+  };
+  const response = await fetch(url, options);
+  console.log(response);
   const json = await response.json();
   return json;
 }
@@ -23,7 +32,7 @@ function Component() {
       <ul>
         {
           items.map((item, i) => <li key={i}>{item}</li>)
-        }
+        }ReadableStream
       </ul>
     </div>
   );
