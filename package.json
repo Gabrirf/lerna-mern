@@ -1,0 +1,44 @@
+{
+  "name": "lerna-mern",
+  "version": "1.0.0",
+  "description": "MERN App in monorepository using Lerna",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "postinstall": "lerna bootstrap",
+    "purge": "npm run clear:test && npm run clear:locks && npm run clear:modules",
+    "build": "lerna run build --parallel",
+    "deploy": "lerna run deploy --parallel",
+    "dev": "lerna run start --parallel",
+    "start": "npm run build && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabrirf/lerna-mern.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "react",
+    "reactjs",
+    "mongodb",
+    "api",
+    "rest",
+    "express",
+    "lerna"
+  ],
+  "author": "Gabriel Rodríguez Flores <gabrirf.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gabrirf/lerna-mern/issues"
+  },
+  "homepage": "https://github.com/Gabrirf/lerna-mern#readme",
+  "dependencies": {
+    "lerna": "^3.22.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

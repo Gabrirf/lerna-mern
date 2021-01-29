@@ -1,0 +1,11 @@
+{
+  "name": "helpers",
+  "version": "0.0.0",
+  "description": "Simple package that contains generic modules",
+  "main": "index.js",
+  "author": "Gabriel <gabrirf.dev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "winston": "^3.2.1"
+  }
+}

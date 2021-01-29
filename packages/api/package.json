@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "description": "Backend API Rest",
+  "author": "Gabriel <gabrirf.dev@gmail.com>",
+  "homepage": "https://github.com/Gabrirf/lerna-mern/tree/master/packages/api#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon",
+    "deploy": "node src/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helpers": "^0.0.0",
+    "models": "^0.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

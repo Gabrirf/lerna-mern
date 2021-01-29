@@ -1,0 +1,10 @@
+0 silly argv {
+0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': 'node_modules/.bin/lerna'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath /home/grodriguez/workspaces/gabri/lerna-mern
+3 error JSONError: Unexpected token } in JSON at position 452 while parsing near '...odels": "^0.0.0",  },  "devDependencie...' in packages/api/package.json
+3 error     at module.exports (/home/grodriguez/workspaces/gabri/lerna-mern/node_modules/parse-json/index.js:26:19)
+3 error     at parse (/home/grodriguez/workspaces/gabri/lerna-mern/node_modules/load-json-file/index.js:15:9)
