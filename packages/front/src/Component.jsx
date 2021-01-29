@@ -10,7 +10,6 @@ async function getFromBackend() {
      }
   };
   const response = await fetch(url, options);
-  console.log(response);
   const json = await response.json();
   return json;
 }
@@ -32,7 +31,7 @@ function Component() {
       <ul>
         {
           items.map((item, i) => <li key={i}>{item}</li>)
-        }ReadableStream
+        }
       </ul>
     </div>
   );
