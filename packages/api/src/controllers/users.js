@@ -1,3 +1,5 @@
+const { mongodbService } = require('../services');
+
 function getUsers(req, res, next) {
   return res.status(200).send('pong');
 }
@@ -7,6 +9,7 @@ function getUserId(req, res, next) {
 }
 
 function createUser(req, res, next) {
+  mongodbService.createUser(req.body);
   return res.status(201).send({ message: 'Created' });
 }
 
