@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Form, Input, Button } from 'antd';
+import UserCard from "./user-card";
  
 const layout = {
   labelCol: { span: 4 },
@@ -23,30 +24,33 @@ async function getFromBackend(data) {
   const json = await response.json();
   return json;
 }
-class Search extends Component {
+function Search() {
+  const [users, setUsers] = useState([]);
 
-
-  render() {
-    const onFinish = values => {
-      console.log(values);
-      getFromBackend(values);
-    };
-    return (
-      <>
-        <Form {...layout} onFinish={onFinish} >
-          <Form.Item name='userName' label='Username' rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 4 }}>
-            <Button type='primary' htmlType='submit'>
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-        {/* <UserCard /> */}
-      </>
-    );
-  }
+  const onFinish = async values => {
+    console.log(values);
+    const res = await getFromBackend(values);
+    console.log(res);
+    setUsers(res.results);
+  };
+  
+  return (
+    <>
+      <Form {...layout} onFinish={onFinish} >
+        <Form.Item name='userName' label='Username' rules={[{ required: true }]}>
+          <Input />
+        </Form.Item>
+        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 4 }}>
+          <Button type='primary' htmlType='submit'>
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+      {
+        users.map(u => <UserCard {...u} /> )
+      }
+    </>
+  );
 }
  
 export default Search;
