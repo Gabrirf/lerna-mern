@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, NavLink, BrowserRouter } from "react-router-dom";
 import Component from "./component";
-import Stuff from "./stuff";
-import Contact from "./contact";
+import UserForm from "./user-form";
+import Search from "./search";
  
 class Main extends React.Component {
   render() {
@@ -13,13 +13,13 @@ class Main extends React.Component {
           <h1>Simple SPA</h1>
           <ul className="header">
             <li><NavLink to="/">Component</NavLink></li>
-            <li><NavLink to="/stuff">Stuff</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
+            <li><NavLink to="/form">User form</NavLink></li>
+            <li><NavLink to="/search">Search</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Component}/>
-            <Route path="/stuff" component={Stuff}/>
-            <Route path="/contact" component={Contact}/>
+            <Route path="/form" component={UserForm}/>
+            <Route path="/search" component={Search}/>
           </div>
         </div>
       </BrowserRouter>
