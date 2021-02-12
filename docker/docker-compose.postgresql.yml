@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postgresql:
+    image: postgres:9.6
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=postgres_db
+      - POSTGRES_USER=admin_db
+      - POSTGRES_PASSWORD=admin_12345678
+volumes:
+  postgres-data:
+    external: false

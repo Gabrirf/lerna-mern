@@ -7,6 +7,8 @@
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "postinstall": "lerna bootstrap",
     "purge": "npm run clear:test && npm run clear:locks && npm run clear:modules",
+    "compose:tools": "docker-compose -f docker/docker-compose.tools.yml up -d",
+    "compose:tools:down": "docker-compose -f docker/docker-compose.tools.yml down",
     "build": "lerna run build --parallel",
     "deploy": "lerna run deploy --parallel",
     "dev": "lerna run start --parallel",
