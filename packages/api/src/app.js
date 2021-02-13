@@ -6,7 +6,7 @@ const config = require('./config');
 const app = express();
 
 if (process.env.NODE_ENV === 'production') {
-  const buildPath = path.resolve(__dirname, '../../front/build');
+  const buildPath = path.resolve(__dirname, '../../front/dist');
   app.use(express.static(buildPath));
 }
 
